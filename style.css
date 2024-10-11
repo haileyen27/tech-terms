@@ -1,0 +1,64 @@
+body{
+    font-family:'tahoma';
+    padding:0px;
+    margin:0px;
+}
+
+main{
+    position: static;
+    background-color:black;
+    min-height:5000px;
+    color:white;
+}
+
+header {
+    background-color: rgb(255, 204, 0);
+
+    margin: 0%;
+    border: 1px;
+    padding: 10px;
+    width:100%;
+
+    border-style:solid;
+
+    display:flex;
+    flex-direction:row;
+    left:0px;
+
+    position:fixed;
+    top:0;
+}
+
+h1 {
+    font-size:48px;
+    font-family: 'Tahoma';
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    padding-top: 0px;
+    width:auto;
+
+    display:flex;
+    flex-direction:column;
+    border-style:none;
+    border-width:1px;
+}
+
+#login {
+    align-self: flex-end;
+    width:auto;
+    border-style:none;
+    border-width:1px;
+    width:65px;
+    font-family:'Tahoma';
+    position: absolute;
+    right: 0;
+
+    margin-right:40px;
+}
+
+#header-gap{
+    width: 80%;
+}
+
