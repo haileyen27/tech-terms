@@ -4,13 +4,29 @@
         <meta charset="utf-8">
         <title>Tech Terms Homepage</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        
     </head>
     <body>
         <header>
-            <h1>Tech Terms</h1>
-
-            <h3 id="login">Log In</h3>
+            
+            <div id="header_rows">
+                <h1>Tech Terms</h1> 
+                <h3 id="login">Log In</h3>
+                <!-- considering putting title, login, navbar all in one row to reduce height of header (currently on two) -H-->
+                
+                <div id="navbar">
+                    <button type="button" class="navbutton"><a href="./home.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                    <button type="button" class="navbutton">Categories</button> <!-- make dropdown -H-->
+                    <button type="button" class="navbutton">Random</button>
+                    <button type="button" class="navbutton">[Searchbar].......................</navbutton> <!-- make text field -H-->
+                </div>
+            </div>
         </header>
+
+
+
+
+        
         <main>
             <div style="height: 100"></div> <!--Left off: trying to align body, currently overlapping with header due to position stuff. -H -->
             <p>Welcome to Tech Terms home page!</p>
