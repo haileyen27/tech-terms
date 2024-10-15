@@ -9,18 +9,19 @@
     <body>
         <header>
             
-            <div id="header_rows">
-                <h1>Tech Terms</h1> 
-                <h3 id="login">Log In</h3>
-                <!-- considering putting title, login, navbar all in one row to reduce height of header (currently on two) -H-->
-                
-                <div id="navbar">
-                    <button type="button" class="navbutton"><a href="./home.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
-                    <button type="button" class="navbutton">Categories</button> <!-- make dropdown -H-->
-                    <button type="button" class="navbutton">Random</button>
-                    <button type="button" class="navbutton">[Searchbar].......................</navbutton> <!-- make text field -H-->
-                </div>
+            <div id="navbar">
+                <h1 id="title">Tech Terms</h1> 
+            
+            <!-- considering putting title, login, navbar all in one row to reduce height of header (currently on two) -H-->
+            
+            
+                <button type="button" class="navbutton"><a href="./home.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                <button type="button" class="navbutton">Categories</button> <!-- make dropdown -H-->
+                <button type="button" class="navbutton">Random</button>
+                <button type="button" class="navbutton">[Searchbar].......................</button> <!-- make text field -H-->
+                <button type="button" class="navbutton" id="login">Log In</button>
             </div>
+
         </header>
 
 
@@ -28,11 +29,14 @@
 
         
         <main>
-            <div style="height: 100"></div> <!--Left off: trying to align body, currently overlapping with header due to position stuff. -H -->
+            <div style="height: 70"></div> <!--Left off: trying to align body, currently overlapping with header due to position stuff. -H -->
             <p>Welcome to Tech Terms home page!</p>
         </main>
 
 
     </body>
+    <footer>
+        <p>Copyright [team] 2024</p>
+    </footer>
 
 </html>

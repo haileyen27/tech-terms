@@ -2,42 +2,17 @@
     --techgold: rgb(255, 204, 0) /* Variable for yellow color. Usage: "var(--techgold)" -H */
 }
 
+
+
+/*
+BODY
+*/
+
 body{
     font-family:'tahoma';
     padding:0px;
     margin:0px;
-}
-
-main{
-    /* set header height to specific pixel size (round to whole/convenient pixel) once finalized,
-        then set top margin of main to same. -H */
-    position: static;
     background-color:black;
-    margin-top: 126px;
-    min-height:5000px;
-    color:white;
-}
-
-header {
-    /* set header height to specific pixel size (round to whole/convenient pixel) once finalized,
-        then set top margin of main to same. -H */
-    background-color: rgb(255, 204, 0);
-
-    margin: 0%;
-    border: 1px;
-    padding: 10px;
-    width:100%;
-    height:auto;
-    box-sizing:border-box;
-
-    border-style:solid;
-
-    display:flex;
-    flex-direction:row;
-    left:0px;
-
-    position:fixed;
-    top:0;
 }
 
 h1 {
@@ -54,28 +29,50 @@ h1 {
     flex-direction:column;
     border-style:none;
     border-width:1px;
+
+    color:black;
 }
 
-#login {
-    align-self: flex-end;
-    width:auto;
-    border-style:none;
-    border-width:1px;
-    width:65px;
-    font-family:'Tahoma';
-    position: absolute;
-    right: 0;
 
-    margin-right:40px;
-}
 
-#header-gap{
-    width: 80px;
+
+/*
+HEADER
+*/
+header {
+    /* set header height to specific pixel size (round to whole/convenient pixel) once finalized,
+        then set top margin of main to same. -H */
+    background-color: rgb(255, 204, 0);
+
+    margin: 0%;
+    border: 0px;
+    padding: 10px;
+    width:100%;
+    
+    box-sizing:border-box;
+    height:70px;
+    border-style:solid;
+
+    display:flex;
+    flex-direction:row;
+    left:0px;
+
+    position:fixed;
+    top:0;
 }
 
 #navbar{
     display:flex;
     flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#navbar > #title {
+    position: absolute;
+    left:10px;
+    align-self: center;
 }
 
 #navbar > .navbutton {
@@ -89,13 +86,40 @@ h1 {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 14pt;
-
-    
-
 }
 
-#header_rows {
-    display: flex;
-    flex-direction: column;
+
+
+
+/*
+MAIN BODY
+*/
+main{
+    /* set header height to specific pixel size (round to whole/convenient pixel) once finalized,
+        then set top margin of main to same. -H */
+    position: static;
+    background-color:black;
+    margin-top: 70px;
+    min-height:1000px; /* Temporary until the body of text is filled out -H */
+    color:white;
+    padding:0px;
 }
 
+main > p {
+    padding: 10px;
+}
+
+
+
+
+/*
+FOOTER
+*/
+footer {
+    padding:0px;
+    color: white;
+}
+
+footer > p{
+    margin:10px;
+}
