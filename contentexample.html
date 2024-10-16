@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Example Article - Tech Terms</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Tech Terms</h1>
+            <div id="navbar">
+                <button type="button" class="navbutton"><a href="./home.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                <button type="button" class="navbutton">Categories</button> <!-- make dropdown -H-->
+                <button type="button" class="navbutton">Random</button>
+                <button type="button" class="navbutton">[Searchbar].......................</button> <!-- make text field -H-->
+                <button type="button" class="navbutton" id="login">Log In</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
+            <div class="tags">
+                Tags: <a>Templates</a>, <a>Articles</a>
+            </div>
+            <div class="article-title">
+                <h1>Example Article</h1>
+            </div>
+            <div class="article-content"> <!-- div used to realign flexboxes at smaller sizes -H -->
+                <div class="boxes"> <!-- div used to realign flexboxes at smaller sizes -H -->
+                    <div class="contents"> <!--table of contents -H -->
+                        <!-- 
+                            These should be the list of categories we'll need. They can be omitted as fits the page. 
+                            (TODO) link them to a header in the page
+                            May add more as I think of it
+                            -H
+                         -->
+                        <li>Summary</li>
+                        <li>Details</li>
+                        <li>Other Information</li>
+                        <li>History</li>
+                        <li>See Also</li>
+                        <li>References</li>
+                    </div>
+                    <div class="infobox">
+                        <li>image here</li>
+                        <li>info line 1</li>
+                        <li>etc.</li> <!--TODO: fill out infobox framework -H -->
+                    </div>
+                </div>
+                <div class="content-body"> <!-- the article itself -H -->
+                    <h2>Summary</h2>
+                    <p>Welcome to Tech Terms example article page! This is the content body. This is where the main article goes.</p>
+                    <h2>Details</h2>
+                    <p>etc.</p>
+                    <h2>Other Information</h2>
+                    <p>etc.</p>
+                    <h2>History</h2>
+                    <p>etc.</p>
+                    <h2>See Also</h2>
+                    <p>etc.</p>
+                    <h2>References</h2>
+                    <p>etc.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Copyright [team] 2024</p>
+        </footer>
+        
+    </body>
+</html>

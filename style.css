@@ -2,6 +2,9 @@
     --techgold: rgb(255, 204, 0) /* Variable for yellow color. Usage: "var(--techgold)" -H */
 }
 
+/*TODO:
+    Themes (light/dark mode)
+*/
 
 
 /*
@@ -56,11 +59,15 @@ header {
 
     display:flex;
     flex-direction:row;
-    left:0px;
+    align-items:stretch;
+    justify-content:flex-end;
+    
 
     position:fixed;
     top:0;
+    left:0px;
 }
+
 
 #navbar{
     display:flex;
@@ -70,13 +77,17 @@ header {
     width: 100%;
 }
 
-#navbar > #title {
-    position: absolute;
+
+#navbar > #title, header > #title {
+    width:400px;
+    position:absolute;
     left:10px;
     align-self: center;
+    
+
 }
 
-#navbar > .navbutton {
+#navbar > .navbutton, header > .navbutton {
     background-color: var(--techgold);
     margin: 5px;
     border-color: black;
@@ -99,16 +110,93 @@ main{
         then set top margin of main to same. -H */
     position: static;
     background-color:black;
-    margin-top: 70px; /* Spacer to avoid overlap with header -H */
-    min-height:1000px; /* Temporary until the body of text is filled out -H */
+    min-height: 1000px; /* Temporary until the body of text is filled out -H */
     color:white;
-    padding:0px;
+    padding:10px;
+      
 }
 
-main > p {
+main > div > h1 {
+    color: white;
+    margin: 10px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+main > p, main > div > p {
     padding: 10px;
 }
 
+main > .spacer { /* Spacer to avoid overlap with header -H */
+    min-height: 70px;
+}
+
+.tags{
+    font-size:10pt;
+    padding: 0px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    height:fit-content;
+    margin: 0px;
+}
+
+.article-content{
+    display:flex;
+    flex-direction: row;
+}
+
+.boxes {
+    display:flex;
+    flex-direction: column;
+}
+.contents, .infobox {
+    display: inline-block; 
+    border: 5px;
+    border-color: var(--techgold);
+    border-style:outset;
+    margin: 10px;
+    margin-top:10px;
+    width: 75%;
+    padding:5px;
+    padding-right:10px;
+
+}
+.contents {
+    float:left;
+}
+.contents > li {
+    text-align:start;
+    list-style:none;
+}
+.infobox {
+    float:left;
+    right:0px;
+    border: 5px;
+    border-style:outset;
+    border-color: var(--techgold);
+    list-style:none;
+}
+
+
+.content-body {
+    display: flex;
+    flex-direction:column;
+    text-align:top;
+    text-wrap:wrap;     
+    width: 80%;
+}
+.content-body > p {
+    margin:10px;
+}
+
+.content-body > h2 {
+    border-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-bottom:5px;
+    margin: 10px;
+    width:100%
+}
 
 
 
@@ -122,4 +210,27 @@ footer {
 
 footer > p{
     margin:10px;
+}
+
+
+@media (max-width: 900px) { /* Changes these styles when the screen width is less than 900px -H */
+    main > .spacer {
+        /*height: 140px;*/  /* Will use this piece when I get the title and nav buttons to align properly -H */
+    }
+    header {
+        /*height:140px;*/
+        flex-direction: column;
+    }
+    #navbar{
+        flex-direction: row;
+    }
+    .article-content {
+      flex-direction: column;
+    }
+    .boxes {
+        width:100%;
+    }
+    .contents, .infobox, .content-body{
+        width:90%
+    }
 }
