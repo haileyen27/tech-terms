@@ -11,9 +11,17 @@
             <h1 id="title">Tech Terms</h1>
             <div id="navbar">
                 <button type="button" class="navbutton"><a href="./index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
-                <button type="button" class="navbutton">Categories</button> <!-- make dropdown -H-->
+                <select type="button" class="navbutton" name="categories" placeholder="Categories">
+                    <option>Categorie</option>
+                    <option>Term</option>
+                    <option>Location</option>
+                    <option>Event</option>
+                </select> <!-- make dropdown -H-->
                 <button type="button" class="navbutton">Random</button>
-                <button type="button" class="navbutton">[Searchbar].......................</button> <!-- make text field -H-->
+                <div class="navbutton" style="padding:0px;border-width:0px;">
+                    <input type="text" class="navbutton" id="searchbar" name="searchbar" placeholder="Search..."><input type="submit" class="navbutton" value="&rArr;">
+                    <!--Searchbar and submit button must remain on same line or it adds a gap. Button will be connected to PHP for search functionality. -H-->
+                </div>
                 <button type="button" class="navbutton" id="login">Log In</button>
             </div>
         </header>
