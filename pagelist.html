@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>List of Pages - Tech Terms</title>
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Tech Terms</h1>
+            <div id="navbar">
+                <button type="button" class="navbutton"><a href="./index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                <button type="button" class="navbutton"><a href="./pagelist.html">All Pages</a></button>
+                <select type="button" class="navbutton" name="categories" placeholder="Categories">
+                    <option>Categories</option>
+                    <option>Terms</option>
+                    <option>Locations</option>
+                    <option>Events</option>
+                </select> <!-- make dropdown -H-->
+                <button type="button" class="navbutton">Random</button>
+                <div class="navbutton" style="padding:0px;border-width:0px;">
+                    <input type="text" class="navbutton" id="searchbar" name="searchbar" placeholder="Search..."><input type="submit" class="navbutton" value="&rArr;">
+                    <!--Searchbar and submit button must remain on same line or it adds a gap. Button will be connected to PHP for search functionality. -H-->
+                </div>
+                <button type="button" class="navbutton" id="login">Log In</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
+            <div class="tags">
+                Tags: <a href="./categories/organizational.html">Organizational</a>
+            </div>
+            <div class="article-title">
+                <h1>List of Pages</h1>
+            </div>
+            <div class="article-content"> <!-- div used to realign flexboxes at smaller sizes -H -->
+                <div class="content-body">
+                    <h2>Housekeeping & Templates</h2>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./pagelist.html">List of Pages (You Are Here)</a></li>
+                        <li><a href="./articles/articletemplate.html">Article Page Template</a></li>
+                        <li><a href="./categories/categorytemplate.html">Category Page Template</a></li>
+
+                    <h2>Categories</h2> <!--Please add categories alphabetically -H-->
+                        <li><a href="./categories/articles.html">Articles</a></li>
+                        <li><a href="./categories/categories.html">Categories (Category)</a></li>
+                        <li><a href="./categories/locations.html">Locations</a></li>
+                        <li><a href="./categories/organizational.html">Organizational</a></li>
+                        <li><a href="./categories/templates.html">Templates</a></li>
+
+                    <h2>Articles</h2> <!--Please add articles alphabetically -H-->
+                        <li><a href="./articles/EatsHit.html">EatsHit</a></li>
+                        <li><a href="./articles/WalkerPool.html">Walker Pool</a></li>
+
+
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Copyright [team] 2024</p>
+        </footer>
+        
+    </body>
+</html>

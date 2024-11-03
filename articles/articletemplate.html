@@ -2,15 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>EatsHit - Tech Terms</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Template Article - Tech Terms</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
         
     </head>
     <body>
         <header>
             <h1 id="title">Tech Terms</h1>
             <div id="navbar">
-                <button type="button" class="navbutton"><a href="./index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                <button type="button" class="navbutton"><a href="../index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                <button type="button" class="navbutton"><a href="../pagelist.html">All Pages</a></button>
                 <select type="button" class="navbutton" name="categories" placeholder="Categories">
                     <option>Categories</option>
                     <option>Terms</option>
@@ -29,7 +30,7 @@
         <main>
             <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
             <div class="tags">
-                Tags: <a>Templates</a>, <a>Articles</a>
+                Tags: <a href="../categories/templates.html">Templates</a>, <a href="../categories/articles.html">Articles</a> <!--Remove templates category when making page. Leave articles category. -H-->
             </div>
             <div class="article-title">
                 <h1>Example Article</h1>
@@ -58,10 +59,7 @@
                 </div>
                 <div class="content-body"> <!-- the article itself -H -->
                     <h2 id="summary">Summary</h2>
-                    <p> EatsHit.tech was a website that existed in late 2023 into early 2024. 
-                        It's purpose was to pull data from the dining services website and report what was being served at the time. 
-                        It was able to serve information about meals faster than the original website due to it storing the data rather than making a call every single time someone was looking at the page.
-                        The page was developed by Ryan. </p>
+                    <p>Welcome to Tech Terms example article page! This is the content body. This is where the main article goes.</p>
                     <h2 id="details">Details</h2>
                     <p>etc.</p>
                     <h2 id="otherinformation">Other Information</h2>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>The Walker Pool - Tech Terms</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Tech Terms</h1>
+            <div id="navbar">
+                <button type="button" class="navbutton"><a href="../index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                <button type="button" class="navbutton"><a href="../pagelist.html">All Pages</a></button>
+                <select type="button" class="navbutton" name="categories" placeholder="Categories">
+                    <option>Categories</option>
+                    <option>Terms</option>
+                    <option>Locations</option>
+                    <option>Events</option>
+                </select> <!-- make dropdown -H-->
+                <button type="button" class="navbutton">Random</button>
+                <div class="navbutton" style="padding:0px;border-width:0px;">
+                    <input type="text" class="navbutton" id="searchbar" name="searchbar" placeholder="Search..."><input type="submit" class="navbutton" value="&rArr;">
+                    <!--Searchbar and submit button must remain on same line or it adds a gap. Button will be connected to PHP for search functionality. -H-->
+                </div>
+                <button type="button" class="navbutton" id="login">Log In</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
+            <div class="tags">
+                Tags: <a href="../categories/articles.html">Articles</a>, <a href="../categories/locations.html">Locations</a>
+            </div>
+            <div class="article-title">
+                <h1>The Walker Pool</h1>
+            </div>
+            <div class="article-content"> <!-- div used to realign flexboxes at smaller sizes -H -->
+                <div class="boxes"> <!-- div used to realign flexboxes at smaller sizes -H -->
+                    <div class="contents"> <!--table of contents -H -->
+                        <!-- 
+                            These should be the list of categories we'll need. They can be omitted as fits the page. 
+                            (TODO) link them to a header in the page
+                            May add more as I think of it
+                            -H
+                         -->
+                        <li>Summary</li>
+                        <li>Details</li>
+                        <li>Other Information</li>
+                        <li>History</li>
+                        <li>See Also</li>
+                        <li>References</li>
+                    </div>
+                    <div class="infobox">
+                        <li>image here</li>
+                        <li>info line 1</li>
+                        <li>etc.</li> <!--TODO: fill out infobox framework -H -->
+                    </div>
+                </div>
+                <div class="content-body"> <!-- the article itself -H -->
+                    <h2 id="summary">Summary</h2>
+                    <p>The Walker Pool is a room, formerly a swimming pool, located in the basement of the Walker Arts and Humanities Center</p>
+                    <h2 id="details">Details</h2>
+                    <p>
+                        The Walker Pool is an empty swimming pool located in the basement of Walker. It is not accessible to students. It is currently used for the VPA Department's prop storage.
+                        The pool is left over from the former Sherman Gym. 
+                    </p>
+                    <h2 id="history">History</h2>
+                    <p>
+                        1946-1949 - Sherman Gym built<br>
+                        1980 - SDC built, replacing Sherman Gym<br>
+                        1980s - Sherman Gym building remodeled<br>
+                        1985 (August 2) - Walker Arts and Humanities Center opened (pool closed off)<br>
+                    </p>
+                    <h2 id="seealso">See Also</h2>
+                    <p>
+                        Walker Arts and Humanities Center
+                        Sherman Gym
+                        Student Development Complex
+                        Visual and Performing Arts Department
+                    </p>
+                    <h2 id="references">References</h2>
+                    <p>
+                        <a href="https://www.mtu.edu/library/archives/collections/documents/mtu-256-sherman-gym-walker-arts-and-humanities-building-renovation-records.pdf">MTU Archives and Copper Country Historical Collections</a>
+                        <br>Initial article written by Hailey E. from memory
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Copyright [team] 2024</p>
+        </footer>
+        
+    </body>
+</html>

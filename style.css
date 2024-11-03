@@ -1,10 +1,26 @@
 :root{
-    --techgold: rgb(255, 204, 0) /* Variable for yellow color. Usage: "var(--techgold)" -H */
+    --techgold: rgb(255, 204, 0); /* Variable for yellow color. Usage: "var(--techgold)" -H */
+    --dimgold: rgb(200, 150, 0);
 }
 
 /*TODO:
     Themes (light/dark mode)
 */
+
+/*
+LINKS
+*/
+a:link{
+    color: var(--techgold);
+}
+
+.navbutton > a:link, .navbutton > a:visited{
+    color: black;
+}
+
+a:visited{
+    color: var(--dimgold);
+}
 
 
 /*
@@ -211,6 +227,11 @@ main > .spacer { /* Spacer to avoid overlap with header -H */
     margin: 10px;
     width:100%;
     top: -70px;
+}
+
+.content-body > li {
+    margin:10px;
+    margin-left: 50px;
 }
 
 .about-body {   
