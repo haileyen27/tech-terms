@@ -209,7 +209,8 @@ main > .spacer { /* Spacer to avoid overlap with header -H */
     border-bottom-width: 1px;
     padding-bottom:5px;
     margin: 10px;
-    width:100%
+    width:100%;
+    top: -70px;
 }
 
 .about-body {   
