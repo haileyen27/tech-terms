@@ -64,6 +64,7 @@ header {
         /* Heights should be basically finalized 10/15 -H*/
     background-color: rgb(255, 204, 0);
 
+
     margin: 0%;
     border: 0px;
     padding: 10px;
@@ -103,8 +104,9 @@ header {
 
 }
 
-#navbar > .navbutton, header > .navbutton, #navbar > .navbutton > .navbutton {
+#navbar > .navbutton, header > .navbutton, #navbar > form > .navbutton, .navbutton  {
     background-color: var(--techgold);
+    color: var(--techgold);
     margin: 5px;
     border-color: black;
     border-style: solid;
@@ -127,6 +129,8 @@ header {
     font-size: 14pt;
     box-sizing:border-box;
     height:40px;
+
+    width:1000px;
 }
 
 
@@ -270,6 +274,13 @@ main > .spacer { /* Spacer to avoid overlap with header -H */
     border-radius: 8%;
     height:auto;
     object-fit: cover;
+}
+
+.login-boxes {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
 
 /*
