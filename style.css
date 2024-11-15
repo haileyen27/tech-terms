@@ -89,13 +89,13 @@ header {
 #navbar{
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    width: 75%;
+    justify-items: flex-end;
+    width: 77.5%;
 }
 
 
 #navbar > #title, header > #title {
-    width:400px;
+    width:22.5%;
     position:absolute;
     left:10px;
     align-self: center;
@@ -128,7 +128,7 @@ header {
     font-size: 14pt;
     box-sizing: border-box;
     height:40px;
-    width:500px;
+    width: 400px;
 }
 
 #navbar > .form-test {
