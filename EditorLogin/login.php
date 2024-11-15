@@ -38,22 +38,22 @@
         	</header>
 		<main>
 		<div class="spacer"></div>
-		<div class="login-boxes">
-		<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
-			<label for="uname">username: </label>
-			<input type="text" id="uname" name="username"><br>
-			<label for="pword">password: </label>
-			<input type="text" id="pword" name="password"><br>
+		<div style="display: grid; place-items: center; min-height: 50vh; align-items: right;">
+		<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>">
+			<label for="uname" style="font-size: 30px;">Username:     </label>
+			<input type="text" id="uname" name="username" style="height: 30px;" autocomplete="one-time-code"><br>
+			<label for="pword" style="font-size: 30px">Password:  	 </label>
+			<input type="password" id="pword" name="password" style="height: 30px; margin-left: 8px" autocomplete="one-time-code"><br>
 			<button type="submit" name="login">login</button>	
 		</form>
 	<?php
 		if(isset($_POST["login"])){
-			if (authenticate($_POST["username"], $_POST["password"]) ==1) {
-				$_SESSION["username"]=$_POST["username"];
-				header("LOCATION:main.php");
+			if (testLogin($_POST["username"], $_POST["password"]) ==1) {
+				$_SESSION["username"] = $_POST["username"];
+				header("LOCATION:../indexx.php");
 				return;
 			}else{
-				echo '<p style="color:red">incorrect username and password</p>';
+				echo '<p style="color:red; ">incorrect username and password</p>';
 			}
 		}
 	?>
