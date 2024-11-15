@@ -15,12 +15,20 @@
                 <form method="get" action="search.php">
 
                 
-                    <select type="button" class="navbutton" name="categories" placeholder="Categories">
-                        <option>Categories</option><!--go to list of categories -H-->
-                        <option>Terms</option>
-                        <option>Locations</option>
-                        <option>Events</option>
-                    </select> <!-- Need to go to page on click (form submit + script go to link on option select) -H-->
+                <select type ="button" class="navbutton" name="categories" placeholder="Categories" onchange="
+                    if(this.value == 3) {
+                        window.location.href = './categories/events.html';
+                    } else if (this.value == 2){
+                        window.location.href = './categories/locations.html';
+                    } else if (this.value == 1){
+                        window.location.href = './categories/terms.html';
+                    }
+                ">
+                    <option value="0">Categories</option>
+                    <option value="1">Terms</option>
+                    <option value="2">Locations</option>
+                    <option value="3">Events</option>
+                </select> <!-- end of dropdown -->
                 </form>
                 <button type="button" class="navbutton">Random</button>
                 <div class="navbutton" style="padding:0px;border-width:0px;">

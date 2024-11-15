@@ -12,12 +12,20 @@
             <div id="navbar">
                 <button type="button" class="navbutton"><a href="../index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
                 <button type="button" class="navbutton"><a href="../pagelist.html">All Pages</a></button>
-                <select type="button" class="navbutton" name="categories" placeholder="Categories">
-                    <option>Categories</option>
-                    <option>Terms</option>
-                    <option>Locations</option>
-                    <option>Events</option>
-                </select> <!-- make dropdown -H-->
+                <select type ="button" class="navbutton" name="categories" placeholder="Categories" onchange="
+                    if(this.value == 3) {
+                        window.location.href = './events.html';
+                    } else if (this.value == 2){
+                        window.location.href = './locations.html';
+                    } else if (this.value == 1){
+                        window.location.href = './terms.html';
+                    }
+                ">
+                    <option value="0">Categories</option>
+                    <option value="1">Terms</option>
+                    <option value="2">Locations</option>
+                    <option value="3">Events</option>
+                </select> <!-- end of dropdown -->
                 <button type="button" class="navbutton">Random</button>
                 <div class="navbutton" style="padding:0px;border-width:0px;">
                     <input type="text" class="navbutton" id="searchbar" name="searchbar" placeholder="Search..."><input type="submit" class="navbutton" value="&rArr;">
