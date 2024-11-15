@@ -8,6 +8,19 @@
 		return $dbh;
 	}
 
+	function testLogin($user, $passwd) {
+		try {
+			if($user == "tester" && $passwd == "testpw"){
+				return 1;
+			}else{
+				return 0;
+			}
+		}catch (PDOException $e) {
+			print "Error!" . $e->getMessage() . "<br/>";
+			die();
+		}
+	}
+
 //return number of rows matching the given user and passwd.
 	function authenticate($user, $passwd) {
 		try {
