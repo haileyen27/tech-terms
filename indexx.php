@@ -15,10 +15,8 @@
             <div id="navbar">
                 <button type="button" class="navbutton"><a href="./indexx.php">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
                 <button type="button" class="navbutton"><a href="./pagelist.html">All Pages</a></button>
-                <form method="get" action="search.php">
-
-                
-                <select type ="button" class="navbutton" name="categories" placeholder="Categories" onchange="
+                <form method="get" action="search.php" class="form-test">
+                    <select type ="button" class="navbutton" name="categories" placeholder="Categories" onchange="
                     if(this.value == 3) {
                         window.location.href = './categories/events.html';
                     } else if (this.value == 2){
@@ -27,15 +25,15 @@
                         window.location.href = './categories/terms.html';
                     }
                 ">
-                    <option value="0">Categories</option>
-                    <option value="1">Terms</option>
-                    <option value="2">Locations</option>
-                    <option value="3">Events</option>
+                    <option value="0" >Categories</option>
+                    <option value="1" >Terms</option>
+                    <option value="2" >Locations</option>
+                    <option value="3" >Events</option>
                 </select> <!-- end of dropdown -->
                 </form>
                 <button type="button" class="navbutton">Random</button>
                 <div class="navbutton" style="padding:0px;border-width:0px;">
-                    <input type="text" class="navbutton" id="searchbar" name="searchbar" placeholder="Search..."><input type="submit" class="navbutton" value="&rArr;">
+                    <input type="text" class="navbutton" id="searchbar" name="searchbar" placeholder="Search..."><input type="submit" class="submit-button" value="&rArr;">
                     <!--Searchbar and submit button must remain on same line or it adds a gap. Button will be connected to PHP for search functionality. -H-->
                 </div>
                 <button type="button" class="navbutton" id="login"><a href="./EditorLogin/login.php">Log In</a></button>
@@ -44,7 +42,7 @@
         
         <main>
             <div class="spacer"></div>
-            <div class="about-body">
+  	    <div class="about-body">
 
                 <h2>Welcome!</h2>
                 <p>Welcome to Tech Terms home page! The buttons above will help you navigate the site. Home will take you to this page, categories will take you to the list of different term categories, random will bring you to a random term page, and the searchbar is for looking up specific terms. The log in button is for editors to access editing tools.</p>
@@ -120,6 +118,4 @@
         
     </body>
 
-
 </html>
-
