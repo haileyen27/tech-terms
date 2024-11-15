@@ -87,11 +87,10 @@ header {
 
 
 #navbar{
-    display:flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     justify-content: flex-end;
-    width: 100%;
+    width: 75%;
 }
 
 
@@ -100,13 +99,12 @@ header {
     position:absolute;
     left:10px;
     align-self: center;
-    
-
 }
 
-#navbar > .navbutton, header > .navbutton, #navbar > form > .navbutton, .navbutton  {
+#navbar > .navbutton, header > .navbutton, #navbar > .form-test > .navbutton, .navbutton, #navbar > .navbutton > .submit-button  {
+    display: inline-block;
     background-color: var(--techgold);
-    color: var(--techgold);
+    color: black;
     margin: 5px;
     border-color: black;
     border-style: solid;
@@ -118,6 +116,7 @@ header {
 }
 
 #navbar > .navbutton > .navbutton {
+    color: black;
     background-color: var(--techgold);
     margin: 0px;
     border-color: black;
@@ -127,13 +126,16 @@ header {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 14pt;
-    box-sizing:border-box;
+    box-sizing: border-box;
     height:40px;
-
-    width:1000px;
+    width:500px;
 }
 
-
+#navbar > .form-test {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
 
 
 /*
@@ -274,13 +276,6 @@ main > .spacer { /* Spacer to avoid overlap with header -H */
     border-radius: 8%;
     height:auto;
     object-fit: cover;
-}
-
-.login-boxes {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
 }
 
 /*
