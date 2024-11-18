@@ -28,7 +28,14 @@
                     <option value="3">Events</option>
                 </select> <!-- end of dropdown -->
                 
-                <button type="button" class="navbutton">Random</button>
+                <button onclick= "randomURL()" type="button" class="navbutton">Random</button>
+                <script>
+                    function randomURL(){
+                        var arrayOfSites = ["./articles/EatsHit.html", "./articles/WalkerPool.html"];
+                        var randomSite = arrayOfSites[Math.floor(Math.random() * arrayOfSites.length)];
+                        window.location.replace(randomSite);
+                    }
+                </script>
 
                 <div class="navbutton" style="padding:0px;border-width:0px;">
                 <form method="post" action="index.php">
