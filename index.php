@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php 
+	session_start();
+?>
+<?php
+	if(isset($_POST["logout"])){
+		session_destroy();
+		session_unset();
+		header("LOCATION: indexx.php");
+	}
+?>
+
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -44,7 +55,19 @@
                 </form>
                 </div>
 
-                <button type="button" class="navbutton" id="login">Log In</button>
+		<?php
+                	if(isset($_SESSION["username"])){
+				?> 
+				<form method="post" action="indexx.php" class="form-test">
+					<button type="submit" name="logout" class="navbutton">Log Out</Button>
+				</form>
+				<?php
+			}else{
+				?>
+				<button type="button" class="navbutton" id="login"><a href="./EditorLogin/login.php">Log In</a></button> 
+				<?php
+			}
+            	?>
 
                 <?php
 
@@ -65,7 +88,7 @@
             <div class="spacer"></div>
             <div class="about-body">
 
-                <h2>Welcome!</h2>
+                <h2>Welcome <?php if(isset($_SESSION["username"])) {echo $_SESSION["username"];} ?> </h2>
                 <p>Welcome to Tech Terms home page! The buttons above will help you navigate the site. Home will take you to this page, categories will take you to the list of different term categories, random will bring you to a random term page, and the searchbar is for looking up specific terms. The log in button is for editors to access editing tools.</p>
 
                 <h2>About</h2>
