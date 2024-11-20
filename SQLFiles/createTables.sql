@@ -9,25 +9,19 @@ create table pages(
 id varchar(256) not null primary key,
 name varchar(128),
 pathFromRoot varchar(256),
-summary text,
-details text,
-history text,
-seeAlso text,
-reference text,
-gallery text,
-other text
+content text
 );
 
 # Each category gets a row in this table
 create table categories(
 name varchar(128) primary key,
-Description text,
+description text,
 pathFromRoot varchar(256)
 );
 
 # Each user gets a row in this table
 create table users(
-id int,
+id int primary key,
 name varchar(128),
 password varchar(256)
 );
@@ -47,6 +41,7 @@ primary key(pageID,userID,time)
 create table pageCategories(
 pageID varchar(256) not null references pages(id),
 catName varchar(128) references categories(name),
-pageName varchar(128) references pages(name)
+pageName varchar(128) references pages(name),
+primary key(pageID, catName)
 );
 
