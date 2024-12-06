@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php 
+	session_start();
+?>
+<?php
+	if(isset($_POST["logout"])){
+		session_destroy();
+		session_unset();
+		header("LOCATION: indexx.php");
+	}
+?>
+
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -12,6 +23,7 @@
             <div id="navbar">
                 <button type="button" class="navbutton"><a href="./index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
                 <button type="button" class="navbutton"><a href="./pagelist.html">All Pages</a></button>
+                
                 <select type ="button" class="navbutton" name="categories" placeholder="Categories" onchange="
                     if(this.value == 3) {
                         window.location.href = './categories/events.html';
@@ -26,7 +38,7 @@
                     <option value="2">Locations</option>
                     <option value="3">Events</option>
                 </select> <!-- end of dropdown -->
-
+                
                 <button onclick= "randomURL()" type="button" class="navbutton">Random</button>
                 <script>
                     function randomURL(){
@@ -37,10 +49,38 @@
                 </script>
 
                 <div class="navbutton" style="padding:0px;border-width:0px;">
-                    <input type="text" class="navbutton" id="searchbar" name="searchbar" placeholder="Search..."><input type="submit" class="navbutton" value="&rArr;">
+                <form method="post" action="index.php">
+                    <input type="text" class="navbutton" id="searchbar" name="searchterm" placeholder="Search..."><input type="submit" name="sendsearch" class="navbutton" value="&rArr;">
                     <!--Searchbar and submit button must remain on same line or it adds a gap. Button will be connected to PHP for search functionality. -H-->
+                </form>
                 </div>
-                <button type="button" class="navbutton" id="login">Log In</button>
+
+		<?php
+                	if(isset($_SESSION["username"])){
+				?> 
+				<form method="post" action="indexx.php" class="form-test">
+					<button type="submit" name="logout" class="navbutton">Log Out</Button>
+				</form>
+				<?php
+			}else{
+				?>
+				<button type="button" class="navbutton" id="login"><a href="./EditorLogin/login.php">Log In</a></button> 
+				<?php
+			}
+            	?>
+
+                <?php
+
+                    require "EditorLogin/db.php";
+                    session_start();
+                    if(isset($_POST["sendsearch"])){
+                        $_SESSION["searchterm"] = $_POST["searchterm"];
+                        header("LOCATION:./search.php");
+                        return;
+                    }
+
+                ?>
+
             </div>
         </header>
         
@@ -48,7 +88,7 @@
             <div class="spacer"></div>
             <div class="about-body">
 
-                <h2>Welcome!</h2>
+                <h2>Welcome <?php if(isset($_SESSION["username"])) {echo $_SESSION["username"];} ?> </h2>
                 <p>Welcome to Tech Terms home page! The buttons above will help you navigate the site. Home will take you to this page, categories will take you to the list of different term categories, random will bring you to a random term page, and the searchbar is for looking up specific terms. The log in button is for editors to access editing tools.</p>
 
                 <h2>About</h2>
@@ -76,7 +116,7 @@
                         </div>
                     </div>
                     <div class="person-box"> 
-                        <img src="./person_images/ealfaro.jpg" alt="Picture of Midna, Eddie's dog'" class="person-img">
+                        <img src="./person_images/ealfaro.jpg" alt="Picture of Eddie Alfaro" class="person-img">
                         <div class="person-text">
                             <p><b>Name: </b>Eddie Alfaro</p>
                             <p><b>Role: </b>Developer</p>

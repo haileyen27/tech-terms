@@ -1,23 +1,41 @@
 <!DOCTYPE html>
+    <!-- Connects to DB and pulls article data -L -->
+    <?php
+    require "/local/group_projects/cs3141/classdb/TechTerms/readDB/readDB.php";
+    $db = connectDB();
+    $id = 'walkerPool';
+    try {
+        $statement = $db->prepare("SELECT content, name FROM pages ".
+        "WHERE id = :id");
+        $statement->bindParam(":id", $id);
+        $result = $statement->execute();
+        $row = $statement->fetch();
+        $db=null;
+        }catch (PDOException $e) {
+            print "Error!" . $e->getMessage() . "<br/>";
+            die();
+        } 
+    ?>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Example Article - Tech Terms</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <title> <?php echo $row[1]; ?> - Tech Terms</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
         
     </head>
     <body>
         <header>
             <h1 id="title">Tech Terms</h1>
             <div id="navbar">
-                <button type="button" class="navbutton"><a href="./index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                <button type="button" class="navbutton"><a href="../index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                <button type="button" class="navbutton"><a href="../pagelist.html">All Pages</a></button>
                 <select type ="button" class="navbutton" name="categories" placeholder="Categories" onchange="
                     if(this.value == 3) {
-                        window.location.href = './categories/events.html';
+                        window.location.href = '../categories/events.html';
                     } else if (this.value == 2){
-                        window.location.href = './categories/locations.html';
+                        window.location.href = '../categories/locations.html';
                     } else if (this.value == 1){
-                        window.location.href = './categories/terms.html';
+                        window.location.href = '../categories/terms.html';
                     }
                 ">
                     <option value="0">Categories</option>
@@ -28,7 +46,7 @@
                 <button onclick= "randomURL()" type="button" class="navbutton">Random</button>
                 <script>
                     function randomURL(){
-                        var arrayOfSites = ["./articles/EatsHit.html", "./articles/WalkerPool.html"];
+                        var arrayOfSites = ["../articles/EatsHit.html", "../articles/WalkerPool.html"];
                         var randomSite = arrayOfSites[Math.floor(Math.random() * arrayOfSites.length)];
                         window.location.replace(randomSite);
                     }
@@ -44,52 +62,38 @@
         <main>
             <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
             <div class="tags">
-                Tags: <a>Templates</a>, <a>Articles</a>
+                Tags: <a href="../categories/articles.html">Articles</a>, <a href="../categories/locations.html">Locations</a>
             </div>
             <div class="article-title">
-                <h1>Example Article</h1>
+                <h1><?php echo $row[1]; ?></h1>
             </div>
             <div class="article-content"> <!-- div used to realign flexboxes at smaller sizes -H -->
                 <div class="boxes"> <!-- div used to realign flexboxes at smaller sizes -H -->
                     <div class="contents"> <!--table of contents -H -->
                         <!-- 
                             These should be the list of categories we'll need. They can be omitted as fits the page. 
-                            (TODO) link them to a header in the page
-                            May add more as I think of it
                             -H
                          -->
-                        <li>Summary</li>
-                        <li>Details</li>
-                        <li>Other Information</li>
-                        <li>History</li>
-                        <li>See Also</li>
-                        <li>References</li>
-                    </div>
-                    <div class="infobox">
-                        <li>image here</li>
-                        <li>info line 1</li>
-                        <li>etc.</li> <!--TODO: fill out infobox framework -H -->
+                        <li><a href="#summary">Summary</a></li>
+                        <li><a href="#details">Details</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#seealso">See Also</a></li>
+                        <li><a href="#references">References</a></li>
                     </div>
                 </div>
                 <div class="content-body"> <!-- the article itself -H -->
-                    <h2>Summary</h2>
-                    <p>Welcome to Tech Terms example article page! This is the content body. This is where the main article goes.</p>
-                    <h2>Details</h2>
-                    <p>etc.</p>
-                    <h2>Other Information</h2>
-                    <p>etc.</p>
-                    <h2>History</h2>
-                    <p>etc.</p>
-                    <h2>See Also</h2>
-                    <p>etc.</p>
-                    <h2>References</h2>
-                    <p>etc.</p>
+                
+                <!-- Displays article contents pulled from DB -L -->
+                <?php
+                echo $row[0];
+                ?>
+            
                 </div>
             </div>
         </main>
 
         <footer>
-            <p>Copyright [team] 2024</p>
+            <p>Copyright TechTerms 2024</p>
         </footer>
         
     </body>
