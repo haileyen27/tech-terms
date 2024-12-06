@@ -3,7 +3,7 @@
     <?php
     require "/local/group_projects/cs3141/classdb/TechTerms/readDB/readDB.php";
     $db = connectDB();
-    $id = 'walkerPool'; # This is the id for the article in the DB -L
+    $id = 'REPLACE_WITH_ARTICLE_ID'; # This is the id for the article in the DB -L
     try {
         $statement = $db->prepare("SELECT content, name FROM pages ".
         "WHERE id = :id");
@@ -24,7 +24,7 @@
         
     </head>
     <body>
-        <header>
+    <header>
         <h1 id="title">Tech Terms</h1>  <!-- All files below use a relative path (assumes current or one folder deeper than destination). Not great but it works -L -->
             <div id="navbar">
                 <button type="button" class="navbutton"><a href="../index.php">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
@@ -81,7 +81,7 @@
         <main>
             <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
             <div class="tags">
-                Tags: <a href="../categories/articles.html">Articles</a>, <a href="../categories/locations.html">Locations</a>
+                Tags: <a href="../categories/templates.html">Templates</a>, <a href="../categories/articles.html">Articles</a> <!--Remove templates category when making page. Leave articles category. -H-->
             </div>
             <div class="article-title">
                 <h1><?php echo $row[1]; ?></h1>
@@ -93,20 +93,37 @@
                             These should be the list of categories we'll need. They can be omitted as fits the page. 
                             -H
                          -->
-                        <li><a href="#summary">Summary</a></li>
-                        <li><a href="#details">Details</a></li>
+                         <li><a href="#summary">Summary</a></li>
+                         <li><a href="#details">Details</a></li>
+                        <li><a href="#otherinformation">Other Information</a></li>
                         <li><a href="#history">History</a></li>
                         <li><a href="#seealso">See Also</a></li>
                         <li><a href="#references">References</a></li>
                     </div>
                 </div>
                 <div class="content-body"> <!-- the article itself -H -->
-                
-                <!-- Displays article contents pulled from DB -L -->
+                    
+                <!-- Displays article contents pulled from DB (stored in $row[0]) -L -->
                 <?php
                 echo $row[0];
                 ?>
-            
+                
+                <!-- Use the code below as a format for the html code you would put into the DB (content attribute of pages table) -L
+
+                    <h2 id="summary">Summary</h2>
+                    <p>Welcome to Tech Terms example article page! This is the content body. This is where the main article goes.</p>
+                    <h2 id="details">Details</h2>
+                    <p>etc.</p>
+                    <h2 id="otherinformation">Other Information</h2>
+                    <p>etc.</p>
+                    <h2 id="history">History</h2>
+                    <p>etc.</p>
+                    <h2 id="seealso">See Also</h2>
+                    <p>etc.</p>
+                    <h2 id="references">References</h2>
+                    <p>etc.</p> 
+                    
+                    -->
                 </div>
             </div>
         </main>
