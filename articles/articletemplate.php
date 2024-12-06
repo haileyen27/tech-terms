@@ -110,17 +110,17 @@
                 
                 <!-- Use the code below as a format for the html code you would put into the DB (content attribute of pages table) -L
 
-                    <h2 id="summary">Summary</h2>
+                    <h2 id='summary'>Summary</h2>
                     <p>Welcome to Tech Terms example article page! This is the content body. This is where the main article goes.</p>
-                    <h2 id="details">Details</h2>
+                    <h2 id='details'>Details</h2>
                     <p>etc.</p>
-                    <h2 id="otherinformation">Other Information</h2>
+                    <h2 id='otherinformation'>Other Information</h2>
                     <p>etc.</p>
-                    <h2 id="history">History</h2>
+                    <h2 id='history'>History</h2>
                     <p>etc.</p>
-                    <h2 id="seealso">See Also</h2>
+                    <h2 id='seealso'>See Also</h2>
                     <p>etc.</p>
-                    <h2 id="references">References</h2>
+                    <h2 id='references'>References</h2>
                     <p>etc.</p> 
                     
                     -->
