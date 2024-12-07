@@ -2,19 +2,8 @@
     <!-- Connects to DB and pulls article data -L -->
     <?php
     require "/local/group_projects/cs3141/classdb/TechTerms/readDB/readDB.php";
-    $db = connectDB();
     $id = 'REPLACE_WITH_ARTICLE_ID'; # This is the id for the article in the DB -L
-    try {
-        $statement = $db->prepare("SELECT content, name FROM pages ".
-        "WHERE id = :id");
-        $statement->bindParam(":id", $id);
-        $result = $statement->execute();
-        $row = $statement->fetch();
-        $db=null;
-        }catch (PDOException $e) {
-            print "Error!" . $e->getMessage() . "<br/>";
-            die();
-        } 
+    $row = getData($id);
     ?>
 <html lang="en">
     <head>
