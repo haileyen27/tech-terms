@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Econo (Econofoods) - Tech Terms</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Tech Terms</h1>
+            <div id="navbar">
+                <button type="button" class="navbutton"><a href="../index.html">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
+                <button type="button" class="navbutton"><a href="../pagelist.html">All Pages</a></button>
+                <select type ="button" class="navbutton" name="categories" placeholder="Categories" onchange="
+                    if(this.value == 3) {
+                        window.location.href = '../categories/events.html';
+                    } else if (this.value == 2){
+                        window.location.href = '../categories/locations.html';
+                    } else if (this.value == 1){
+                        window.location.href = '../categories/terms.html';
+                    }
+                ">
+                    <option value="0">Categories</option>
+                    <option value="1">Terms</option>
+                    <option value="2">Locations</option>
+                    <option value="3">Events</option>
+                </select> <!-- end of dropdown -->
+                
+                <button onclick= "randomURL()" type="button" class="navbutton">Random</button>
+                <script>
+                    function randomURL(){
+                        var arrayOfSites = ["../articles/EatsHit.html", "../articles/WalkerPool.html"];
+                        var randomSite = arrayOfSites[Math.floor(Math.random() * arrayOfSites.length)];
+                        window.location.replace(randomSite);
+                    }
+                </script>
+                <div class="navbutton" style="padding:0px;border-width:0px;">
+                    <input type="text" class="navbutton" id="searchbar" name="searchbar" placeholder="Search..."><input type="submit" class="navbutton" value="&rArr;">
+                    <!--Searchbar and submit button must remain on same line or it adds a gap. Button will be connected to PHP for search functionality. -H-->
+                </div>
+                <button type="button" class="navbutton" id="login">Log In</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
+            <div class="tags">
+                Tags: <a href="../categories/templates.html">Templates</a>, <a href="../categories/articles.html">Articles</a> <!--Remove templates category when making page. Leave articles category. -H-->
+            </div>
+            <div class="article-title">
+                <h1>EatsHit.tech</h1>
+            </div>
+            <div class="article-content"> <!-- div used to realign flexboxes at smaller sizes -H -->
+                <div class="boxes"> <!-- div used to realign flexboxes at smaller sizes -H -->
+                    <div class="contents"> <!--table of contents -H -->
+                        <!-- 
+                            These should be the list of categories we'll need. They can be omitted as fits the page. 
+                            (TODO) link them to a header in the page
+                            May add more as I think of it
+                            -H
+                         -->
+                        <li>Summary</li>
+                        <li>Details</li>
+                        <li>Other Information</li>
+                        <li>History</li>
+                        <li>See Also</li>
+                        <li>References</li>
+                    </div>
+                    <div class="infobox">
+                        <li>image here</li>
+                        <li>info line 1</li>
+                        <li>etc.</li> <!--TODO: fill out infobox framework -H -->
+                    </div>
+                </div>
+                <div class="content-body"> <!-- the article itself -H -->
+                    <h2 id="summary">Summary</h2>
+                    <p>Econo, otherwise known as Econofoods is a name for the grocery store Tadych's Marketplace.</p>
+                    <h2 id="details">Details</h2>
+                    <p>The name came from shortening the name for the establishment. Up until July of 2022, Econofoods was a 24 hours grocery store that many students would visit in the
+                        early hours of the morning for anything from baked goods, energy drinks, to alcohol. By September of 2022, Econofoods had been sold to Coborn's, a different chain of stores.
+                        that pulled the plug on it's 24 hour service.
+                    </p>
+                    <h2 id="otherinformation">Other Information</h2>
+                    <p>etc.</p>
+                    <h2 id="history">History</h2>
+                    <p>etc.</p>
+                    <h2 id="seealso">See Also</h2>
+                    <p>etc.</p>
+                    <h2 id="references">References</h2>
+                    <p>etc.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Copyright [team] 2024</p>
+        </footer>
+        
+    </body>
+</html>
