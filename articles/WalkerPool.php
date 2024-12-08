@@ -2,19 +2,8 @@
     <!-- Connects to DB and pulls article data -L -->
     <?php
     require "/local/group_projects/cs3141/classdb/TechTerms/readDB/readDB.php";
-    $db = connectDB();
-    $id = 'walkerPool'; # This is the id for the article in the DB -L
-    try {
-        $statement = $db->prepare("SELECT content, name FROM pages ".
-        "WHERE id = :id");
-        $statement->bindParam(":id", $id);
-        $result = $statement->execute();
-        $row = $statement->fetch();
-        $db=null;
-        }catch (PDOException $e) {
-            print "Error!" . $e->getMessage() . "<br/>";
-            die();
-        } 
+    $id = 'walkerPool'; # This is the id for the article in the DB -L   
+    $row = getData($id);
     ?>
 <html lang="en">
     <head>
@@ -37,6 +26,8 @@
                         window.location.href = '../categories/locations.html';
                     } else if (this.value == 1){
                         window.location.href = '../categories/terms.html';
+                    } else if (this.value == 0){
+                        window.location.href = '../categories/categories.html';
                     }
                 ">
                     <option value="0">Categories</option>
