@@ -22,16 +22,10 @@
 ?>
 
 <!DOCTYPE html>
-    <!-- Connects to DB and pulls article data -L -->
-    <?php
-    require "/local/group_projects/cs3141/classdb/TechTerms/readDB/readDB.php";
-    $id = 'walkerPool'; # This is the id for the article in the DB -L   
-    $row = getData($id);
-    ?>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title> <?php echo $row[1]; ?> - Tech Terms</title> <!-- $row[1] is the page title from DB -L-->
+        <title>Category Page Template - Tech Terms</title>
         <link rel="stylesheet" type="text/css" href="../style.css">
         
     </head>
@@ -97,32 +91,18 @@
         <main>
             <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
             <div class="tags">
-                Tags: <a href="../categories/articles.php">Articles</a>, <a href="../categories/locations.php">Locations</a>
+                Tags: <a href="./templates.php">Templates</a>, <a href="./categories.php">Categories</a> <!--Remove "templates" tag when making new page -H-->
             </div>
             <div class="article-title">
-                <h1><?php echo $row[1]; ?></h1>
+                <h1>Example Category</h1>
             </div>
             <div class="article-content"> <!-- div used to realign flexboxes at smaller sizes -H -->
-                <div class="boxes"> <!-- div used to realign flexboxes at smaller sizes -H -->
-                    <div class="contents"> <!--table of contents -H -->
-                        <!-- 
-                            These should be the list of categories we'll need. They can be omitted as fits the page. 
-                            -H
-                         -->
-                        <li><a href="#summary">Summary</a></li>
-                        <li><a href="#details">Details</a></li>
-                        <li><a href="#history">History</a></li>
-                        <li><a href="#seealso">See Also</a></li>
-                        <li><a href="#references">References</a></li>
-                    </div>
-                </div>
-                <div class="content-body"> <!-- the article itself -H -->
-                
-                <!-- Displays article contents pulled from DB -L -->
-                <?php
-                echo $row[0];
-                ?>
-            
+                <div class="content-body">
+                    <h2>About This Category</h2>
+                        <p>What does this category contain?</p>
+                    <h2>List of Pages in Category</h2>
+                        <li><a href="../articles/articletemplate.php">Article Template</a></li>
+                        <li><a href="./categorytemplate.php">Category Template</a></li>
                 </div>
             </div>
         </main>

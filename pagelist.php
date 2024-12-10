@@ -20,13 +20,14 @@
                 header("LOCATION:./search.php");
                 return;
         }
+
 ?>
 
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Tech Terms Edit Page</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>List of Pages - Tech Terms</title>
+        <link rel="stylesheet" type="text/css" href="./style.css">
         
     </head>
     <body>
@@ -89,55 +90,35 @@
         </header>
         
         <main>
-            <div class="spacer"></div>
-	    <div>
-		<form method="post" action="./editpage.php">
-			<select type="button" class="navbutton" name="pages" id="pages"> 
-				<option value="">Choose an article</option>
-			<?php
-				$hold = getPages();
-				foreach($hold as $pages){
-			?>	
-				<option value="<?php echo $pages[0] ?>" name="pageToEdit"><?php echo $pages[1]?></option>
-			<?php }
-			?>
-			</select>
-			<button type="submit" class="navbutton" name="choosePage">Edit Page</button>
-		</form>
-		<?php	
-		if(isset($_POST["choosePage"])&&($_POST["pages"] != "")){
-			$pageId = $_POST["pages"];
-			echo '<p style="">    Currently Editing: ' . $pageId . '</p>';
-			$_SESSION["pageId"] = $_POST["pages"];
-			$pageData = getPageData($pageId);
-			//echo $pageData;
-		?>
-		<form method="post" action="./editpage.php">
-			<textarea type="textarea" class="navbutton" id="pageContent" name="pageContent" style="height:1000px; width:1200px; padding:10px; rows: 300; columns: 200"><?php
-			if(isset($pageData)){
-				echo $pageData;
-			}else{
-				echo "Nothing yet...";
-			}
-			?></textarea>
-			</br>
-			<button type="submit" class="navbutton" name="submitChange">Submit Change</button>	
-		</form>
-		<?php
-		}	
-		if(isset($_POST["submitChange"])){
-			echo '<p style="">    Changed  ' . $_SESSION["pageId"] . '</p>';
-			setPageData($_SESSION["pageId"], $_POST["pageContent"]);
-		}
-		?>
-	    </div>
+            <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
+            <div class="article-title">
+                <h1>List of Pages</h1>
+            </div>
+            <div class="article-content"> <!-- div used to realign flexboxes at smaller sizes -H -->
+                <div class="content-body">
+                    <h2>Housekeeping & Templates</h2>
+                        <li><a href="./index.php">Home</a></li>
+                        <li><a href="./pagelist.php">List of Pages (You Are Here)</a></li>
+                        <li><a href="./articles/articletemplate.php">Article Page Template</a></li>
+                        <li><a href="./categories/categorytemplate.php">Category Page Template</a></li>
 
-        </main>
-        <footer>
-		<p style="font-size: 3px;color:black">Donkey Kong Country: Tropical Freeze was a pretty good game.</p>
-        </footer>
-        
+                    <h2>Categories</h2> <!--Please add categories alphabetically -H-->
+                        <li><a href="./categories/articles.php">Articles</a></li>
+                        <li><a href="./categories/categories.php">Categories (Category)</a></li>
+                        <li><a href="./categories/events.php">Events</a></li>
+                        <li><a href="./categories/locations.php">Locations</a></li>
+                        <li><a href="./categories/terms.php">Terms</a></li>
+                        <li><a href="./categories/templates.php">Templates</a></li>
+
+                    <h2>Articles</h2> <!--Please add articles alphabetically -H-->
+                        <li><a href="./articles/EatsHit.php">EatsHit</a></li>
+                        <li><a href="./articles/WalkerPool.php">Walker Pool</a></li>
+                        <li><a href="./articles/kday.php">K Day</a></li>
+                        <li><a href="./articles/Econo.php">Econo</a></li>
+
+
+                </div>
+            </div>
+        </main>        
     </body>
-
-
 </html>

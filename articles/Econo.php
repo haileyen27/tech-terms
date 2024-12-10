@@ -1,3 +1,26 @@
+<?php 
+	session_start();
+        require "../db.php";
+
+?>
+<?php
+	if(isset($_POST["logout"])){
+		session_destroy();
+		session_unset();
+		header("LOCATION: ../index.php");
+	}
+
+	if(isset($_POST["edit"])){
+		header("LOCATION: ../editpage.php");
+	}
+      
+        if(isset($_POST["sendsearch"])){
+                $_SESSION["searchterm"] = $_POST["searchterm"];
+                header("LOCATION: ../search.php");
+                return;
+        }
+?>
+
 <!DOCTYPE html>
     <!-- Connects to DB and pulls article data -L -->
     <?php
@@ -13,21 +36,24 @@
         
     </head>
     <body>
-    <header>
-        <h1 id="title">Tech Terms</h1>  <!-- All files below use a relative path (assumes current or one folder deeper than destination). Not great but it works -L -->
+        <header>
+            <h1 id="title">Tech Terms</h1>
             <div id="navbar">
                 <button type="button" class="navbutton"><a href="../index.php">Home</a></button> <!-- change buttons to onclick when JS/php is integrated -H-->
-                <button type="button" class="navbutton"><a href="../pagelist.html">All Pages</a></button>
+                <button type="button" class="navbutton"><a href="../pagelist.php">All Pages</a></button>
                 
                 <select type ="button" class="navbutton" name="categories" placeholder="Categories" onchange="
                     if(this.value == 3) {
-                        window.location.href = '../categories/events.html';
+                        window.location.href = '../categories/events.php';
                     } else if (this.value == 2){
-                        window.location.href = '../categories/locations.html';
+                        window.location.href = '../categories/locations.php';
                     } else if (this.value == 1){
-                        window.location.href = '../categories/terms.html';
-                    }
+                        window.location.href = '../categories/terms.php';
+                    }else if (this.value == 0){
+			window.location.href = '../categories/categories.php';
+		    }
                 ">
+                    <option value="-1">Select Category</option>
                     <option value="0">Categories</option>
                     <option value="1">Terms</option>
                     <option value="2">Locations</option>
@@ -37,7 +63,7 @@
                 <button onclick= "randomURL()" type="button" class="navbutton">Random</button>
                 <script>
                     function randomURL(){
-                        var arrayOfSites = ["./EatsHit.html", "./WalkerPool.php"];
+                        var arrayOfSites = ["../articles/EatsHit.php", "../articles/WalkerPool.php", "../articles/kday.php", "../articles/Econo.php"];
                         var randomSite = arrayOfSites[Math.floor(Math.random() * arrayOfSites.length)];
                         window.location.replace(randomSite);
                     }
@@ -52,8 +78,8 @@
 
 		<?php
                 	if(isset($_SESSION["username"])){
-				?>  
-				<form method="post" action="../index.php" class="form-test"> 
+				?> 
+				<form method="post" action="../index.php" class="form-test">
 					<button type="submit" name="logout" class="navbutton">Log Out</Button>
 					<button type="submit" name="edit" class="navbutton">Edit Pages</Button>
 				</form>
@@ -64,13 +90,14 @@
 				<?php
 			}
             	?>
+
             </div>
-        </header>
+        </header>        
         
         <main>
             <div class="spacer"></div> <!-- spacer used to prevent main body from overlapping with header -H -->
             <div class="tags">
-                Tags: <a href="../categories/templates.html">Templates</a>, <a href="../categories/articles.html">Articles</a> <!--Remove templates category when making page. Leave articles category. -H-->
+                Tags: <a href="../categories/templates.php">Templates</a>, <a href="../categories/articles.php">Articles</a> <!--Remove templates category when making page. Leave articles category. -H-->
             </div>
             <div class="article-title">
                 <h1><?php echo $row[1]; ?></h1>
@@ -116,10 +143,5 @@
                 </div>
             </div>
         </main>
-
-        <footer>
-            <p>Copyright TechTerms 2024</p>
-        </footer>
-        
     </body>
 </html>
